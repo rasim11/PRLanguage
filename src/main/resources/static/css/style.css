@@ -1,0 +1,10 @@
+.add-form{
+    width: 300px;
+    padding: 10px;
+    border: 1px gray solid;
+    border-radius: 10px;
+}
+#start{
+    /*border-radius: 100%;*/
+    border-style:dot-dash;
+}

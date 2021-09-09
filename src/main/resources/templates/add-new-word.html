@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org/" xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/recordVoice.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</head>
+<body>
+<div class="container">
+    <form class="add-form" action="/add-new-word" method="post" th:object="${dictionaryData}" enctype="multipart/form-data">
+    <!--    <input type="text" name="pamirWord">-->
+    <!--    <input type="text" name="rusEquivalent">-->
+    <!--    <input type="text" name="wordImage">-->
+    <!--    <input type="submit" value="Send">-->
+
+        <div class="form-group">
+            <label for="word1">Слово на памирском</label>
+            <input class="form-control" id="word1" name="pamirWord"
+                   placeholder="word in pamir">
+            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+        </div>
+        <div class="form-group">
+            <label for="exampleInputPassword1">Перевод на русский</label>
+            <input type="text" class="form-control" id="exampleInputPassword1" name="rusEquivalent"
+                   placeholder="Meaning in Russian">
+        </div>
+        <div class="form-group">
+            <label for="exampleFormControlFile1">Выберите изображение</label>
+            <input type="file" class="form-control-file" name="image" accept="image/png,image/jpeg" id="exampleFormControlFile1">
+        </div>
+            <a id="audio"></a>
+            <input type="url" id="audioUrl" name="audio"></input>
+            <button id="start">начать запись</button>
+            <button id="stop">остановить запись</button>
+
+        <button id="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+<script src="../js/add-word.js"></script>
+</body>
+</html>
